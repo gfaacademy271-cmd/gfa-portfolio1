@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>GFA International Academy | Portfolio motion design et vidéos pub</title>
+<meta name="description" content="Portfolio de GFA International Academy, motion designer à Lomé (Togo) : vidéos publicitaires animées, visuels, démos d'applications, vidéos explicatives et contenus pour les réseaux sociaux.">
+<meta property="og:title" content="GFA International Academy | Portfolio vidéo">
+<meta property="og:description" content="Vidéos publicitaires animées, visuels et contenus pour les réseaux sociaux, réalisés à Lomé.">
+<meta property="og:image" content="thumbs/hero.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --night:#161230; --panel:#211B45; --line:#352C66; --violet:#7B3FF2; --violet-2:#9B6BFF;
+  --sun:#FFC93C; --coral:#FF4D6D; --paper:#F3F0FF; --muted:#B4ABD9; --green:#2BBF7E;
+  --display:"Bricolage Grotesque", "Poppins", system-ui, sans-serif;
+  --body:"Poppins", system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important;animation:none!important}}
+body{margin:0;background:var(--night);color:var(--paper);font-family:var(--body);font-size:17px;line-height:1.6}
+img,video{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--sun);outline-offset:3px;border-radius:6px}
+.wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+
+/* top bar */
+.top{display:flex;align-items:center;justify-content:space-between;padding:22px 0}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;font-weight:600}
+.mono{width:44px;height:44px;border-radius:12px;background:var(--violet);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:15px;position:relative}
+.mono::after{content:"";position:absolute;top:6px;right:6px;width:8px;height:8px;border-radius:50%;background:var(--sun)}
+.top nav a{text-decoration:none;color:var(--muted);margin-left:22px;font-size:15px}
+.top nav a:hover{color:var(--paper)}
+
+/* hero */
+.hero{display:grid;grid-template-columns:minmax(0,5fr) minmax(0,7fr);gap:48px;align-items:center;padding:40px 0 80px}
+.hero h1{font-family:var(--display);font-weight:800;font-size:clamp(44px,6.4vw,92px);line-height:.95;letter-spacing:-.02em;margin:0 0 24px}
+.hero h1 span{display:block;color:var(--sun)}
+.hero p{color:var(--muted);max-width:44ch;margin:0 0 32px;font-size:18px}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--sun);color:var(--night);text-decoration:none;font-weight:600;padding:15px 26px;border-radius:999px;border:0;font:inherit;font-weight:600;cursor:pointer}
+.btn:hover{background:#ffd76a}
+.btn.ghost{background:transparent;color:var(--paper);box-shadow:inset 0 0 0 2px var(--line)}
+.btn.ghost:hover{box-shadow:inset 0 0 0 2px var(--violet-2)}
+.actions{display:flex;flex-wrap:wrap;gap:12px}
+.reel{position:relative;border-radius:22px;overflow:hidden;background:#000;box-shadow:0 0 0 1px var(--line),0 40px 80px -40px rgba(123,63,242,.6);transform:rotate(-1.2deg)}
+.reel video{width:100%;aspect-ratio:16/9;object-fit:cover}
+.reel .sound{position:absolute;left:16px;bottom:16px;background:rgba(22,18,48,.82);color:var(--paper);border:0;border-radius:999px;padding:10px 16px;font:inherit;font-size:14px;cursor:pointer;backdrop-filter:blur(6px)}
+.reel .sound:hover{background:var(--violet)}
+
+/* services strip */
+.services{display:flex;flex-wrap:wrap;gap:10px 28px;padding:26px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);color:var(--muted);font-size:15px}
+.services b{color:var(--paper);font-weight:500}
+
+/* work */
+.work{padding:80px 0 40px}
+.work h2,.contact h2{font-family:var(--display);font-weight:800;font-size:clamp(34px,4.4vw,58px);letter-spacing:-.015em;line-height:1;margin:0 0 14px}
+.work .lead{color:var(--muted);max-width:60ch;margin:0 0 30px}
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:34px}
+.filters button{font:inherit;font-size:15px;color:var(--paper);background:var(--panel);border:1px solid var(--line);border-radius:999px;padding:9px 16px;cursor:pointer}
+.filters button:hover{border-color:var(--violet-2)}
+.filters button[aria-pressed="true"]{background:var(--violet);border-color:var(--violet)}
+.grid{columns:3 320px;column-gap:26px}
+.card{break-inside:avoid;margin:0 0 34px;display:block}
+.card[hidden]{display:none}
+.thumb{position:relative;display:block;width:100%;padding:0;border:0;background:#000;border-radius:16px;overflow:hidden;cursor:pointer}
+.thumb img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+.thumb:hover img{transform:scale(1.03)}
+.play{position:absolute;inset:auto auto 14px 14px;width:52px;height:52px;border-radius:50%;background:var(--sun);display:grid;place-items:center}
+.play::before{content:"";margin-left:4px;border-left:16px solid var(--night);border-top:10px solid transparent;border-bottom:10px solid transparent}
+.card h3{font-family:var(--display);font-weight:700;font-size:23px;line-height:1.15;margin:14px 0 4px}
+.card p{margin:0 0 10px;color:var(--muted);font-size:15px;line-height:1.5}
+.meta{display:flex;flex-wrap:wrap;gap:6px;align-items:center;font-size:13px}
+.meta .fmt{color:var(--muted);margin-right:4px}
+.tag{border-radius:6px;padding:2px 9px;font-weight:500}
+.tag.client{background:rgba(43,191,126,.16);color:#7fe3b4}
+.tag.concept{background:rgba(255,201,60,.14);color:var(--sun)}
+.tag.ia{background:rgba(255,77,109,.15);color:#ff98ab}
+.tag.gfa{background:rgba(155,107,255,.18);color:#c6aaff}
+
+/* contact */
+.contact{margin:60px 0 0;padding:70px 0 80px;border-top:1px solid var(--line);display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:40px;align-items:end}
+.contact p{color:var(--muted);max-width:48ch;margin:0}
+.contact ul{list-style:none;margin:0;padding:0;font-size:18px}
+.contact li{padding:12px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:16px}
+.contact li span{color:var(--muted)}
+.contact li a{text-decoration:none;font-weight:500}
+.contact li a:hover{color:var(--sun)}
+footer{color:var(--muted);font-size:14px;padding:0 0 40px}
+
+/* player */
+dialog{border:0;padding:0;background:transparent;max-width:min(96vw,1100px);width:100%;color:var(--paper)}
+dialog::backdrop{background:rgba(10,8,24,.88)}
+.player{background:var(--panel);border-radius:18px;overflow:hidden;box-shadow:0 0 0 1px var(--line)}
+.player video{width:100%;max-height:78vh;background:#000;margin:0 auto}
+.player .info{display:flex;justify-content:space-between;align-items:flex-start;gap:20px;padding:18px 22px}
+.player h3{font-family:var(--display);font-size:24px;margin:0 0 2px}
+.player p{margin:0;color:var(--muted);font-size:15px}
+.close{flex:none;background:var(--night);color:var(--paper);border:1px solid var(--line);border-radius:999px;padding:9px 16px;font:inherit;font-size:14px;cursor:pointer}
+.close:hover{border-color:var(--sun)}
+
+@media (max-width:860px){
+  .hero{grid-template-columns:1fr;gap:34px;padding-top:10px}
+  .reel{transform:none}
+  .contact{grid-template-columns:1fr}
+  .top nav{display:none}
+}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <a class="brand" href="#"><span class="mono" aria-hidden="true">GFA</span>GFA International Academy</a>
+    <nav aria-label="Navigation principale"><a href="#realisations">Réalisations</a><a href="#contact">Contact</a></nav>
+  </header>
+
+  <section class="hero">
+    <div>
+      <h1>Des vidéos qui font parler de vous <span>et qui font vendre.</span></h1>
+      <p>Motion designer à Lomé, je crée des vidéos publicitaires animées, des visuels et des contenus pour les réseaux sociaux. Je rédige aussi vos articles SEO et j'organise vos projets comme assistante virtuelle.</p>
+      <div class="actions">
+        <a class="btn" href="https://wa.me/22896984441" target="_blank" rel="noopener">Demander un devis sur WhatsApp</a>
+        <a class="btn ghost" href="#realisations">Voir les réalisations</a>
+      </div>
+    </div>
+    <div class="reel">
+      <video id="hero" src="videos/hero.mp4" poster="thumbs/hero.jpg" autoplay muted loop playsinline aria-label="Showreel motion designer GFA International Academy"></video>
+      <button class="sound" id="sound" type="button">Activer le son</button>
+    </div>
+  </section>
+
+  <div class="services" aria-label="Services">
+    <span><b>Vidéos pub</b> et motion design</span>
+    <span><b>Affiches</b> et visuels</span>
+    <span><b>Réseaux sociaux</b> et community management</span>
+    <span><b>Rédaction SEO</b> pour Google et les IA</span>
+    <span><b>Assistante virtuelle</b> ClickUp, Monday, Asana, Trello</span>
+  </div>
+
+  <section class="work" id="realisations">
+    <h2>Réalisations</h2>
+    <p class="lead">Chaque vidéo est présentée dans son format d'origine : horizontale pour YouTube et LinkedIn, carrée pour Facebook, verticale pour TikTok et Instagram.</p>
+    <div class="filters" id="filters" role="group" aria-label="Filtrer par catégorie"></div>
+    <div class="grid" id="grid"></div>
+  </section>
+
+  <section class="contact" id="contact">
+    <div>
+      <h2>Un projet en tête ?</h2>
+      <p>Racontez-moi votre activité et ce que vous voulez montrer. Je vous réponds avec une proposition adaptée à votre budget.</p>
+      <p style="margin-top:24px"><a class="btn" href="https://wa.me/22896984441" target="_blank" rel="noopener">Écrire sur WhatsApp</a></p>
+    </div>
+    <ul>
+      <li><span>WhatsApp</span><a href="https://wa.me/22896984441" target="_blank" rel="noopener">+228 96 98 44 41</a></li>
+      <li><span>Téléphone</span><a href="tel:+22892025296">+228 92 02 52 96</a></li>
+      <li><span>Email</span><a href="mailto:gfaacademy271@gmail.com">gfaacademy271@gmail.com</a></li>
+      <li><span>Basée à</span><span style="color:var(--paper)">Lomé, Togo</span></li>
+    </ul>
+  </section>
+  <footer>© <span id="year"></span> GFA International Academy. Les projets marqués « Projet conceptuel » sont des cas fictifs réalisés pour démontrer un savoir-faire.</footer>
+</div>
+
+<dialog id="player" aria-labelledby="ptitle">
+  <div class="player">
+    <video id="pvideo" controls playsinline></video>
+    <div class="info">
+      <div><h3 id="ptitle"></h3><p id="pdesc"></p></div>
+      <button class="close" id="pclose" type="button">Fermer</button>
+    </div>
+  </div>
+</dialog>
+
+<script>
+const P = [
+  {id:'showreel-motion', t:'Showreel motion designer', d:'Les meilleurs moments de 15 projets, en 47 secondes.', c:'pub', f:'16:9', s:47, tags:[['gfa','Showreel']]},
+  {id:'showreel-gfa', t:'Showreel GFA avec voix off', d:'Ma vidéo de présentation : vidéos pub, affiches et gestion des réseaux sociaux.', c:'pub', f:'16:9', s:18, tags:[['gfa','Showreel']]},
+  {id:'coach-elmike', t:'Coach Elmike', d:'Une affiche transformée en vidéo animée, avec voix off synchronisée.', c:'pub', f:'16:9', s:19, tags:[['client','Client']]},
+  {id:'amenuveve-coiffure', t:'Amenuvévé Coiffure', d:'Pub pour un salon de coiffure à Lomé, avec plan d\u2019accès animé.', c:'pub', f:'16:9', s:15, tags:[['client','Client']]},
+  {id:'combinaison-leopard', t:'Combinaison léopard', d:'Vidéo mode au rendu de grande marque, pensée pour TikTok et Instagram.', c:'ia', f:'9:16', s:8, tags:[['ia','Réalisée avec l\u2019IA']]},
+  {id:'prise-de-parole-pub', t:'Prise de parole face caméra', d:'Vidéo de conseil sur les images publicitaires, recadrée pour les fils d\u2019actualité.', c:'ia', f:'4:5', s:10, tags:[['ia','Réalisée avec l\u2019IA']]},
+  {id:'foodexpress', t:'FoodExpress, démo d\u2019application', d:'Le parcours complet d\u2019une app de livraison, de la connexion au repas livré.', c:'demo', f:'16:9', s:43, tags:[['concept','Projet conceptuel']]},
+  {id:'joram-comptable', t:'Joram, expert-comptable', d:'Vidéo explicative en anglais : toutes les missions comptables, du début à la clôture.', c:'demo', f:'16:9', s:36, tags:[]},
+  {id:'birame-tran-transit', t:'Birame Tran, transitaire', d:'Le transit de la Chine, la Turquie et l\u2019Europe jusqu\u2019à Dakar, étape par étape.', c:'demo', f:'16:9', s:38, tags:[]},
+  {id:'octobre-rose', t:'Octobre Rose', d:'Sensibilisation au dépistage du cancer du sein, avec un ton doux et rassurant.', c:'sensi', f:'1:1', s:26, tags:[['gfa','Sensibilisation']]},
+  {id:'clickup', t:'Assistante virtuelle sur ClickUp', d:'Organisation des projets clients, du message éparpillé à la tâche terminée.', c:'va', f:'1:1', s:25, tags:[['gfa','Service GFA']]},
+  {id:'monday', t:'Assistante virtuelle sur Monday.com', d:'Tableaux, statuts, chronologie et rappels automatiques.', c:'va', f:'1:1', s:25, tags:[['gfa','Service GFA']]},
+  {id:'asana', t:'Assistante virtuelle sur Asana', d:'Listes de tâches, règles automatiques et point d\u2019avancement client.', c:'va', f:'1:1', s:25, tags:[['gfa','Service GFA']]},
+  {id:'trello', t:'Assistante virtuelle sur Trello', d:'Cartes, checklists et fil d\u2019activité pour suivre chaque projet.', c:'va', f:'1:1', s:25, tags:[['gfa','Service GFA']]},
+  {id:'canva', t:'Création de visuels sur Canva', d:'De l\u2019affiche ratée au visuel pro, décliné dans tous les formats.', c:'visuels', f:'1:1', s:25, tags:[['gfa','Service GFA']]},
+  {id:'claude-ia', t:'Visuels créés avec l\u2019IA', d:'Idées, accroches et maquettes avec l\u2019IA, validées par l\u2019œil d\u2019une designer.', c:'visuels', f:'1:1', s:25, tags:[['gfa','Service GFA']]},
+  {id:'redaction-seo-ia', t:'Rédaction SEO pour les humains et les IA', d:'Comment un article bien construit peut être cité par les moteurs d\u2019IA.', c:'seo', f:'1:1', s:25, tags:[['gfa','Service GFA']]},
+  {id:'seo-geo', t:'SEO et GEO, comment ils se complètent', d:'Vidéo pédagogique : être visible sur Google et dans les réponses des IA.', c:'seo', f:'1:1', s:28, tags:[['gfa','Service GFA']]},
+];
+const CATS = [['all','Tout'],['pub','Vidéos pub'],['demo','Démos et explications'],['va','Assistante virtuelle'],['visuels','Création de visuels'],['seo','Rédaction SEO'],['sensi','Sensibilisation'],['ia','Vidéos IA']];
+const ratio = f => ({'16:9':'16/9','1:1':'1/1','9:16':'9/16','4:5':'4/5'})[f];
+
+const grid = document.getElementById('grid');
+grid.innerHTML = P.map(p => `
+  <article class="card" data-c="${p.c}">
+    <button class="thumb" type="button" data-id="${p.id}" style="aspect-ratio:${ratio(p.f)}" aria-label="Lire la vidéo ${p.t}">
+      <img src="thumbs/${p.id}.jpg" alt="" loading="lazy">
+      <span class="play" aria-hidden="true"></span>
+    </button>
+    <h3>${p.t}</h3>
+    <p>${p.d}</p>
+    <div class="meta"><span class="fmt">Format ${p.f}, ${p.s} s</span>${p.tags.map(([k,l]) => `<span class="tag ${k}">${l}</span>`).join('')}</div>
+  </article>`).join('');
+
+const filters = document.getElementById('filters');
+filters.innerHTML = CATS.map(([k,l],i) => `<button type="button" data-k="${k}" aria-pressed="${i===0}">${l}</button>`).join('');
+filters.addEventListener('click', e => {
+  const b = e.target.closest('button'); if(!b) return;
+  filters.querySelectorAll('button').forEach(x => x.setAttribute('aria-pressed', x===b));
+  document.querySelectorAll('.card').forEach(c => c.hidden = !(b.dataset.k==='all' || c.dataset.c===b.dataset.k));
+});
+
+const dlg = document.getElementById('player'), pv = document.getElementById('pvideo');
+const hero = document.getElementById('hero');
+grid.addEventListener('click', e => {
+  const b = e.target.closest('.thumb'); if(!b) return;
+  const p = P.find(x => x.id===b.dataset.id);
+  document.getElementById('ptitle').textContent = p.t;
+  document.getElementById('pdesc').textContent = p.d;
+  pv.src = `videos/${p.id}.mp4`; pv.poster = `thumbs/${p.id}.jpg`;
+  hero.pause(); dlg.showModal(); pv.play().catch(()=>{});
+});
+const closeP = () => { pv.pause(); pv.removeAttribute('src'); pv.load(); dlg.close(); hero.play().catch(()=>{}); };
+document.getElementById('pclose').addEventListener('click', closeP);
+dlg.addEventListener('cancel', e => { e.preventDefault(); closeP(); });
+dlg.addEventListener('click', e => { if(e.target===dlg) closeP(); });
+
+const sound = document.getElementById('sound');
+sound.addEventListener('click', () => {
+  hero.muted = !hero.muted;
+  if(!hero.muted){ hero.currentTime = 0; hero.play().catch(()=>{}); }
+  sound.textContent = hero.muted ? 'Activer le son' : 'Couper le son';
+});
+if (matchMedia('(prefers-reduced-motion: reduce)').matches) { hero.removeAttribute('autoplay'); hero.pause(); }
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+</body>
+</html>
